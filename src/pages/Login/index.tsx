@@ -28,6 +28,12 @@ const Login = () => {
     reValidateMode: "onChange",
   });
 
+  const handleOnClick = (): void => {
+    console.log("Valido");
+  };
+
+  let disabled = !isValid;
+
   return (
     <Container>
       <LoginContainer>
@@ -49,7 +55,7 @@ const Login = () => {
             errorMessage={errors?.password?.message}
           />
           <Spacing />
-          <Button title="Entrar" />
+          <Button title="Entrar" type="button" onClick={handleOnClick} disabled={disabled}/>
         </Column>
       </LoginContainer>
     </Container>
